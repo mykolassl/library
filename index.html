@@ -17,26 +17,28 @@
             <dialog id="book-dialog">
                 <form method="dialog">
                     <div class="input-container">
-                        <input id="author" type="text" placeholder="Author">
                         <label for="author">Author</label>
+                        <input id="author" type="text" required>
                     </div>
                     <div class="input-container">
-                        <input id="title" type="text" placeholder="Title">
                         <label for="title">Title</label>
+                        <input id="title" type="text" required>
                     </div>
                     <div class="input-container">
-                        <input id="pages" type="number" min="1" placeholder="Number of pages">
                         <label for="pages">Number of pages</label>
+                        <input id="pages" type="number" min="1" required>
                     </div>
                     <div class="input-container">
-                        <input id="read-status" name="read-status" type="checkbox">
                         <label for="read-status">Have you read it yet?</label>
+                        <input id="read-status" name="read-status" type="checkbox">
                     </div>
-                    <button id="cancel-form" type="button">Cancel</button>
-                    <button id="submit-form" type="submit">Add book</button>
+                    <div class="button-container">
+                        <button id="cancel-form" type="button">Cancel</button>
+                        <button id="submit-form" type="submit">Add book</button>
+                    </div>
                 </form>
             </dialog>
-            <button id="add-book">+ Add new book</button>
+            <button id="add-book">Add new book</button>
         </header>
         <main>
 

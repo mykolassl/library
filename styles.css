@@ -31,62 +31,118 @@ html {
 
 body {
     min-height: 100vh;
+    background-color: var(--clr-300);
     font-family: var(--ff-main);
     color: var(--clr-900);
 }
 
 /****************** Header ******************/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: var(--clr-600);
+    color: var(--clr-100);
+}
 
-/* centered book dialog */
 #book-dialog {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 100%;
-    max-width: 30rem;
-    height: 30rem;
     padding: 1.5em 2em;
     border: none;
+    border-radius: 8px;
     background-color: var(--clr-100);
     transform: translate(-50%, -50%);
-    transition: all 1s 0s ease-in-out;
 }
 
 #book-dialog::backdrop {
     background: linear-gradient(-45deg, red, blue);
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
-form[method="dialog"] {
+form {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 100%;
+    gap: 1.5em;
+    color: var(--clr-900);
 }
 
 .input-container {
-    position: relative;
-}
-
-.input-container > label:not([for="read-status"]) {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transition: all 0.2s 0s ease-in-out;
-    opacity: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .input-container > input {
-    transition: all 0.2s 0s ease-in-out;
+    padding: 0.5em;
+    background-color: var(--clr-50);
+    font-size: 14px;
+    outline: none;
+    border: 1px solid var(--clr-300);
+    border-radius: 8px;
+    transition: all 0.15s 0s ease-in-out;
 }
 
-.input-container > input:focus-visible::placeholder {
-    opacity: 0;
+.input-container > input:hover,
+.input-container > input:focus-visible {
+    box-shadow: 0px 2px 5px 0px rgba(0 0 0 / 0.1);
 }
 
-.input-container > input:focus-visible + label:not([for="read-status"]) {
-    display: block;
-    bottom: 1em;
-    opacity: 1;
+.input-container > * {
+    width: 100%;
+    max-width: 15rem;
 }
+
+.button-container {
+    display: flex;
+    gap: 2em;
+}
+
+#cancel-form,
+#submit-form {
+    padding: 1em 1.5em;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.15s 0s ease-in-out;
+}
+
+#cancel-form {
+    background-color: transparent;
+    color: var(--clr-600);
+}
+
+#cancel-form:hover {
+    background-color: var(--clr-200);
+}
+
+#submit-form {
+    background-color: var(--clr-800);
+    color: var(--clr-100);
+}
+
+#submit-form:hover {
+    background-color: var(--clr-700);
+}
+
+#add-book {
+    padding: 1em 1.5em;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--clr-800);
+    color: var(--clr-100);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.15s 0s ease-in-out;
+}
+
+#add-book:hover,
+#add-book:focus-visible {
+    background-color: var(--clr-700);
+}
+
+/*  */
