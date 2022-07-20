@@ -1,0 +1,36 @@
+:root {
+    --clr-900: #0F172A;
+    --clr-800: #1e293b;
+    --clr-700: #334155;
+    --clr-600: #475569;
+    --clr-500: #64748b;
+    --clr-400: #94a3b8;
+    --clr-300: #cbd5e1;
+    --clr-200: #e2e8f0;
+    --clr-100: #f1f5f9;
+    --clr-50: #f8fafc;
+
+    --ff-main: 'Roboto', sans-serif;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--ff-main);
+    color: var(--clr-900);
+}
