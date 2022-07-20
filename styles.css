@@ -34,3 +34,59 @@ body {
     font-family: var(--ff-main);
     color: var(--clr-900);
 }
+
+/****************** Header ******************/
+
+/* centered book dialog */
+#book-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 30rem;
+    height: 30rem;
+    padding: 1.5em 2em;
+    border: none;
+    background-color: var(--clr-100);
+    transform: translate(-50%, -50%);
+    transition: all 1s 0s ease-in-out;
+}
+
+#book-dialog::backdrop {
+    background: linear-gradient(-45deg, red, blue);
+    opacity: 0.5;
+}
+
+form[method="dialog"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container > label:not([for="read-status"]) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.2s 0s ease-in-out;
+    opacity: 0;
+}
+
+.input-container > input {
+    transition: all 0.2s 0s ease-in-out;
+}
+
+.input-container > input:focus-visible::placeholder {
+    opacity: 0;
+}
+
+.input-container > input:focus-visible + label:not([for="read-status"]) {
+    display: block;
+    bottom: 1em;
+    opacity: 1;
+}

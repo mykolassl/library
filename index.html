@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <script src="main.js" defer></script>
+        <title>My library</title>
+    </head>
+    <body>
+        <header>
+            <h2>Library.</h2>
+            <dialog id="book-dialog">
+                <form method="dialog">
+                    <div class="input-container">
+                        <input id="author" type="text" placeholder="Author">
+                        <label for="author">Author</label>
+                    </div>
+                    <div class="input-container">
+                        <input id="title" type="text" placeholder="Title">
+                        <label for="title">Title</label>
+                    </div>
+                    <div class="input-container">
+                        <input id="pages" type="number" min="1" placeholder="Number of pages">
+                        <label for="pages">Number of pages</label>
+                    </div>
+                    <div class="input-container">
+                        <input id="read-status" name="read-status" type="checkbox">
+                        <label for="read-status">Have you read it yet?</label>
+                    </div>
+                    <button id="cancel-form" type="button">Cancel</button>
+                    <button id="submit-form" type="submit">Add book</button>
+                </form>
+            </dialog>
+            <button id="add-book">+ Add new book</button>
+        </header>
+        <main>
 
-    <title>My library</title>
-</head>
-<body>
-    
-</body>
+        </main>
+    </body>
 </html>
