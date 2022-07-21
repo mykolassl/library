@@ -59,6 +59,13 @@ function addBook(book) {
     bookID++;
 }
 
+function clearInputs(author, title, pages, hasBeenRead) {
+    author.value = '';
+    title.value = '';
+    pages.value = '';
+    hasBeenRead.checked = false;
+}
+
 addBookBtn.addEventListener('click', () => {
     bookDialog.showModal();
 });
@@ -68,13 +75,14 @@ cancelFormBtn.addEventListener('click', () => {
 });
 
 form.addEventListener('submit', () => {
-    const author = document.querySelector('#author').value;
-    const title = document.querySelector('#title').value;
-    const pages = document.querySelector('#pages').value;
-    const hasBeenRead = document.querySelector('#read-status').checked;
+    const author = document.querySelector('#author');
+    const title = document.querySelector('#title');
+    const pages = document.querySelector('#pages');
+    const hasBeenRead = document.querySelector('#read-status');
 
-    const book = new Book(author, title, pages, hasBeenRead, bookID);
+    const book = new Book(author.value, title.value, pages.value, hasBeenRead.checked, bookID);
     bookList.push(book);
 
     addBook(book);
+    clearInputs(author, title, pages, hasBeenRead);
 });
