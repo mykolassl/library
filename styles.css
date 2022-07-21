@@ -37,6 +37,7 @@ body {
 }
 
 /****************** Header ******************/
+
 header {
     display: flex;
     justify-content: space-between;
@@ -145,4 +146,50 @@ form {
     background-color: var(--clr-700);
 }
 
-/*  */
+/****************** List of books ******************/
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1em;
+    padding: 1em;  
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+    background-color: var(--clr-600);
+    color: var(--clr-100);
+    border-radius: 8px;
+    transition: all 0.15s 0s ease-in-out;
+}
+
+.book > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book div > button {
+    padding: 1em 1.5em;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.book button.read-btn {
+    color: var(--clr-100);
+    background-color: var(--clr-700);
+}
+
+.book button.remove-btn {
+    color: red;
+}
+
+.book.read {
+    background-color: var(--clr-700);
+}
