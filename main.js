@@ -6,16 +6,18 @@ const form = document.querySelector('form[method="dialog"]');
 let bookList = [];
 let bookID = 1;
 
-function Book(_author, _title, _pages, _hasBeenRead, _id) {
-    this.author  = _author;
-    this.title = _title;
-    this.pages = _pages;
-    this.hasBeenRead = _hasBeenRead;
-    this.id = _id;
-}
+class Book {
+    constructor(_author, _title, _pages, _hasBeenRead, _id) {
+        this.author  = _author;
+        this.title = _title;
+        this.pages = _pages;
+        this.hasBeenRead = _hasBeenRead;
+        this.id = _id;
+    }
 
-Book.prototype.setReadStatus = function() {
-    this.hasBeenRead = !this.hasBeenRead;
+    changeReadStatus() {
+        this.hasBeenRead = !this.hasBeenRead;
+    }
 }
 
 function addBook(book) {
@@ -39,7 +41,7 @@ function addBook(book) {
     changeReadStatusBtn.classList.add('read-btn');
     changeReadStatusBtn.innerText = 'Change read status';
     changeReadStatusBtn.addEventListener('click', () => {
-        book.setReadStatus();
+        book.changeReadStatus();
         bookDiv.classList.toggle('read');        
         readStatus.innerText = book.hasBeenRead ? 'Read' : 'Not read';
     });
